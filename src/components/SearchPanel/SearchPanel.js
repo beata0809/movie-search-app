@@ -2,15 +2,12 @@ import React from "react";
 import "./SearchPanel.css";
 import { reduxForm, Field } from "redux-form";
 import { Button } from "reactstrap";
-import { connect } from "react-redux";
-import { func,object } from "prop-types";
-import { selectedMovie } from "../../store/actions/index";
 
 class SearchPanel extends React.Component {
-  onSubmit=formValues=> {
-   this.props.selectedMovie(formValues.movie);
-  //console.log(formValues);
-  }
+
+  onSubmit = formValues => {
+    this.props.onSubmit(formValues.movie);
+  };
   render() {
     const { handleSubmit } = this.props;
     return (
@@ -32,21 +29,6 @@ class SearchPanel extends React.Component {
   }
 }
 
-SearchPanel.propTypes = {
-  movie:object,
-  selectedMovie: func
-};
-
-const mapStateToProps = state => {
-  return {movie: state.movie};
-};
-
-
-const SearchPanelForm = reduxForm({
+export default reduxForm({
   form: "simple-form"
 })(SearchPanel);
-
-export default connect(
-  mapStateToProps,
-  { selectedMovie }
-)(SearchPanelForm);
