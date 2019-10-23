@@ -38,7 +38,6 @@ SearchPanel.propTypes = {
 };
 
 const mapStateToProps = state => {
- // console.log(state);
   return {movie: state.movie};
 };
 
