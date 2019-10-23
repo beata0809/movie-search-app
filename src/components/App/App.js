@@ -1,12 +1,12 @@
 import React, {Fragment} from "react";
 import {HashRouter as Router, Route} from "react-router-dom";
 import "./App.css";
-import MoviesPanel from "../MoviesPanel/MoviesPanel";
+import SearchPanel from "../SearchPanel/SearchPanel";
 function App() {
   return (
     <Fragment>
       <Router>
-        <Route exact path="/" component={MoviesPanel} />
+        <Route exact path="/" component={SearchPanel} />
       </Router>
     </Fragment>
   );
