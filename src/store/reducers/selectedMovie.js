@@ -1,6 +1,6 @@
 import { SELECTED_MOVIE } from "../types";
 
-const selectedMovieReducer = (state = null, action) => {
+const selectedMovieReducer = (state ={}, action) => {
   if (action.type === SELECTED_MOVIE) {
     return action.payload;
   }

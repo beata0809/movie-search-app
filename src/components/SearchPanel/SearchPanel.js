@@ -7,13 +7,11 @@ import { func,object } from "prop-types";
 import { selectedMovie } from "../../store/actions/index";
 
 class SearchPanel extends React.Component {
-  onSubmit(formValues) {
-  //  console.log(this.props.movie);
-   // this.selectedMovie(formValues);
-    console.log(formValues);
+  onSubmit=formValues=> {
+   this.props.selectedMovie(formValues.movie);
+  //console.log(formValues);
   }
   render() {
-   
     const { handleSubmit } = this.props;
     return (
       <div>
@@ -40,15 +38,16 @@ SearchPanel.propTypes = {
 };
 
 const mapStateToProps = state => {
-  console.log(state);
+ // console.log(state);
   return {movie: state.movie};
 };
 
-SearchPanel = connect(
-  mapStateToProps,
-  { selectedMovie }
-)(SearchPanel);
 
-export default reduxForm({
+const SearchPanelForm = reduxForm({
   form: "simple-form"
 })(SearchPanel);
+
+export default connect(
+  mapStateToProps,
+  { selectedMovie }
+)(SearchPanelForm);
