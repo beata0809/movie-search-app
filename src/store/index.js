@@ -3,7 +3,7 @@ import { reducer as formReducer}  from 'redux-form';
 import selectedMovieReducer from "./reducers/selectedMovie";
 const rootReducer = combineReducers({
     form: formReducer,
-    selectedMovieReducer
+    searchMovie: selectedMovieReducer
 });
 
 export default rootReducer;

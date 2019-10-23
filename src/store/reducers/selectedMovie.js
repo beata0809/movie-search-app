@@ -1,13 +1,8 @@
 import { SELECTED_MOVIE } from "../types";
 
-const initialState = {
-  title: "",
-  year: "",
-  plot: ""
-};
-const selectedMovieReducer = (state = initialState, action) => {
+const selectedMovieReducer = (state = null, action) => {
   if (action.type === SELECTED_MOVIE) {
-    state = action.payload;
+    return action.payload;
   }
   return state;
 };

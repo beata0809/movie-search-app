@@ -1,9 +1,11 @@
 import React from "react";
 
 const SingleMovie = ({ movie }) => (
-  <>
-    <h2>film: {`${movie}`}</h2>
-  </>
+  <div>
+    <h2>film: {`${movie.Title}`}</h2>
+    <div> type:{`${movie.Type}`}</div>
+    <div>year:{`${movie.Year}`}</div>
+  </div>
 );
 
 export default SingleMovie;
