@@ -1,17 +1,25 @@
 .title {
-  color: blue;
- 
-  margin-top:2em;
+  padding-left:40% !important;
+  font-size:30px !important;
 }
 
-.inputStyle {
-  border: 2px solid red;
+.inputStyle{
+}
+
+.inputLabel{
+  width: 30%;
+  padding: 12px 20px;
+  margin: 2em 5em 2em 21em;
+  border: 1px solid #ccc;
+  border-radius: 4px; 
+}
+#buttonSearch{
+  width: 20%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 10px 12px 10px;
+  margin-bottom:6px;
+  border: none;
   border-radius: 4px;
-  width: 50%;
-  height: 40px;
-  margin: 1em  3em;
-}
-
-.searchPanel{
-display:block;
+  cursor: pointer;
 }

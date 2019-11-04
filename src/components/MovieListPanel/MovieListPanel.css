@@ -1,0 +1,9 @@
+.movieList{
+    margin-left:20%;
+    margin-right:20%;
+    
+}
+.notFound{
+    display:flex;
+    justify-content: center;
+}

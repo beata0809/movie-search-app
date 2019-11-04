@@ -1,9 +1,12 @@
 import { combineReducers} from 'redux';
 import { reducer as formReducer}  from 'redux-form';
-import selectedMovieReducer from "./reducers/selectedMovie";
+import selectedMoviesReducer from "./reducers/selectedMovies";
+import singleMovieReducer from './reducers/singleMovie';
+
 const rootReducer = combineReducers({
     form: formReducer,
-    searchMovie: selectedMovieReducer
+    searchMovie: selectedMoviesReducer,
+    singleMovie: singleMovieReducer
 });
 
 export default rootReducer;

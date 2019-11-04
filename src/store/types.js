@@ -1,1 +1,2 @@
-export const SELECTED_MOVIE = "SELECTED_MOVIE";
+export const SELECTED_MOVIES = "SELECTED_MOVIES";
+export const SINGLE_MOVIE = "SINGLE_MOVIE";

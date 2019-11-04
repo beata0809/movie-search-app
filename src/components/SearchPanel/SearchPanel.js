@@ -1,30 +1,34 @@
 import React from "react";
 import "./SearchPanel.css";
 import { reduxForm, Field } from "redux-form";
-import { Button } from "reactstrap";
 import { connect } from "react-redux";
-import { selectedMovie } from "./../../store/actions/index";
-
+import { selectedMovies } from "./../../store/actions/index";
+import {Button} from "reactstrap";
+import { Navbar } from "react-bootstrap";
 class SearchPanel extends React.Component {
+  
   onSubmit = formValues => {
-    this.props.selectedMovie(formValues.movie);
+    this.props.selectedMovies(formValues.movie);
   };
 
   render() {
-    const { handleSubmit } = this.props;
+    const { handleSubmit,pristine, submitting  } = this.props;
     return (
       <div>
-        Find your movie here
-        <form onSubmit={handleSubmit(this.onSubmit)}>
+        <Navbar bg="light">
+          <Navbar.Brand href="#home" className="title">Find your movie here</Navbar.Brand>
+        </Navbar>
+        <form className="form" onSubmit={handleSubmit(this.onSubmit)}>
           {
             <Field
+            className="inputLabel"
               name="movie"
               component="input"
               type="text"
               placeholder="find a movie"
             />
           }
-          <Button>search</Button>
+          <Button color="primary" id="buttonSearch" disabled={pristine || submitting}>Search Movie</Button>
         </form>
       </div>
     );
@@ -41,5 +45,5 @@ const SearchForm = reduxForm({
 
 export default connect(
   mapStateToProps,
-  { selectedMovie }
+  { selectedMovies }
 )(SearchForm);
