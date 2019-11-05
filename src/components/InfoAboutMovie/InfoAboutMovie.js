@@ -24,8 +24,8 @@ class InfoAboutMovie extends React.Component {
       show: true
     });
   };
-  onClick = movie => {
-    this.props.getSingleMovie(movie);
+  onClick = (title, id, year) => {
+    this.props.getSingleMovie(title, id, year);
     this.setState({
       show: true
     });
@@ -39,8 +39,9 @@ class InfoAboutMovie extends React.Component {
         <div className="singleMoviePart">
           <div className="posterPart">
             <img
+              alt={"poster"}
               className="movieListPoster"
-              src={movie.Poster != "N/A" ? `${movie.Poster}` : `${poster}`}
+              src={movie.Poster !== "N/A" ? `${movie.Poster}` : `${poster}`}
             />
           </div>
           <div className="singleMovieTitle">
@@ -53,7 +54,9 @@ class InfoAboutMovie extends React.Component {
             <Button
               className="seeMoreButton"
               color="success"
-              onClick={() => this.onClick(movie.Title)}
+              onClick={() =>
+                this.onClick(movie.Title, movie.imdbID, movie.Year)
+              }
             >
               See more
             </Button>

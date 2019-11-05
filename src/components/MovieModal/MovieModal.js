@@ -31,8 +31,9 @@ class MovieModal extends React.Component {
                 <div className="modalInfo">
                   <img
                     className="modalPoster"
+                    alt={"poster"}
                     src={
-                      singleMovie.Poster != "N/A"
+                      singleMovie.Poster !== "N/A"
                         ? `${singleMovie.Poster}`
                         : `${poster}`
                     }

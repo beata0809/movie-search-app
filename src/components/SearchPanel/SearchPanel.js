@@ -7,7 +7,7 @@ import { Button } from "reactstrap";
 import { Navbar } from "react-bootstrap";
 class SearchPanel extends React.Component {
   onSubmit = formValues => {
-    this.props.getSelectedMovies(formValues.movie);
+    this.props.getSelectedMovies(formValues.movie, 1);
   };
 
   render() {
@@ -41,12 +41,11 @@ class SearchPanel extends React.Component {
     );
   }
 }
-
-const SearchForm = reduxForm({
+SearchPanel = reduxForm({
   form: "search-film-form"
 })(SearchPanel);
 
 export default connect(
   null,
   { getSelectedMovies }
-)(SearchForm);
+)(SearchPanel);
