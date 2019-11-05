@@ -1,20 +1,17 @@
-.singleMoviePart{
-    display:flex;
-    justify-content: space-between;
-    width:100%;
-    padding: 1% 0% 1% 5%
+.singleMoviePart {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 1% 0% 1% 5%;
 }
-.singleMovieTitle{
-    margin-right:1%;
+.singleMovieTitle {
+  margin-right: 1%;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
-#button{
-    width: 20%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 10px 12px 10px;
-    margin-bottom:6px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+.movieListPoster {
+  width: 15em;
+  height: 21em;
+}

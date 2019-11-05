@@ -1,9 +1,12 @@
-.modalInfo{
-    display:flex;
-
+.modalInfo {
+  display: flex;
 }
 
-.moreAboutMovie{
-    display:block;
-    margin-left:10px;
+.moreAboutMovie {
+  display: block;
+  margin-left: 10px;
+}
+.modalPoster {
+  width: 15em;
+  height: 21em;
 }
