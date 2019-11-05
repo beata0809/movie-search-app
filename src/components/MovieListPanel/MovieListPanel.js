@@ -17,7 +17,12 @@ const MovieListPanel = ({ searchMovie }) => {
         <div>
           {searchMovie &&
             searchMovie.Search.map(movie => (
-              <ListGroupItem key={movie.imdbID} className="movieList">
+              <ListGroupItem
+                color="success"
+                key={movie.imdbID}
+                className="movieList"
+                style={({ marginBottom: "2em" }, { marginTop: "2em" })}
+              >
                 <InfoAboutMovie movie={movie} className="searchPanelStyle" />
               </ListGroupItem>
             ))}

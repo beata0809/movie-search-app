@@ -1,9 +1,22 @@
-.movieList{
-    margin-left:30%;
-    margin-right:30%;
-    
+.movieList {
+  margin-left: 30%;
+  margin-right: 30%;
 }
-.notFound{
-    display:flex;
-    justify-content: center;
+.notFound {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  .movieList {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .movieList {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }

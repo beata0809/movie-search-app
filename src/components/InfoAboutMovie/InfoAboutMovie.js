@@ -44,10 +44,17 @@ class InfoAboutMovie extends React.Component {
             />
           </div>
           <div className="singleMovieTitle">
-            <h2> {`${movie.Title}`}</h2>
-            <h6>Type:{`${movie.Type}`}</h6>
-            <h6>Year:{`${movie.Year}`}</h6>
-            <Button color="primary" onClick={() => this.onClick(movie.Title)}>
+            <div className="details">
+              <h2> {`${movie.Title}`}</h2>
+              <h6>Type:{`${movie.Type}`}</h6>
+              <h6>Year:{`${movie.Year}`}</h6>
+            </div>
+
+            <Button
+              className="seeMoreButton"
+              color="success"
+              onClick={() => this.onClick(movie.Title)}
+            >
               See more
             </Button>
           </div>

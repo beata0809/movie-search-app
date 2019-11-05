@@ -14,7 +14,7 @@ class SearchPanel extends React.Component {
     const { handleSubmit, pristine, submitting } = this.props;
     return (
       <div>
-        <Navbar bg="light">
+        <Navbar bg="success">
           <Navbar.Brand href="#home" className="title">
             Find your movie here
           </Navbar.Brand>

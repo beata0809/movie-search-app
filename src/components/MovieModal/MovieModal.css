@@ -10,3 +10,10 @@
   width: 15em;
   height: 21em;
 }
+
+@media only screen and (max-width: 800px) {
+  .modalPoster {
+    width: 11em;
+    height: 15em;
+  }
+}

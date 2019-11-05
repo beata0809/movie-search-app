@@ -1,17 +1,33 @@
 .singleMoviePart {
   display: flex;
-  justify-content: space-evenly;
   width: 100%;
-  padding: 1% 0% 1% 5%;
+  padding: 1% 0% 1% 3%;
 }
 .singleMovieTitle {
+  color: black;
   margin-right: 1%;
   margin-left: 15px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .movieListPoster {
-  width: 15em;
-  height: 21em;
+  width: 15vw;
+  height: 45vh;
+  margin-right: 2vw;
+}
+
+.details {
+  padding-top: 1em;
+}
+
+@media only screen and (max-width: 1000px) {
+  .movieListPoster {
+    width: 10em;
+    height: 16em;
+  }
+  .singleMovieTitle {
+    margin-left: 10px;
+  }
 }
