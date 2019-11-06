@@ -4,7 +4,7 @@ import { SELECTED_MOVIES, SINGLE_MOVIE } from "../types";
 export const getSelectedMovies = (title, page) => async dispatch => {
   try {
     const { data } = await axios.get(
-      `https://www.omdbapi.com/?apikey=c268494&s=${title}&page=${page}`
+      `https://www.omdbapi.com/?apikey=c268494&s=${title}&page=${page}&type=movie`
     );
     dispatch({
       type: SELECTED_MOVIES,
