@@ -26,6 +26,7 @@
   .movieListPoster {
     width: 10em;
     height: 16em;
+    margin-top: 2em;
   }
   .singleMovieTitle {
     margin-left: 10px;

@@ -51,16 +51,21 @@ class InfoAboutMovie extends React.Component {
               <h6>Type:{`${movie.Type}`}</h6>
               <h6>Year:{`${movie.Year}`}</h6>
             </div>
-
-            <Button
-              className="seeMoreButton"
-              color="success"
-              onClick={() =>
-                this.onClick(movie.Title, movie.imdbID, movie.Year)
-              }
-            >
-              See more
-            </Button>
+            {movie.Type !== "game" ? (
+              <Button
+                className="seeMoreButton"
+                color="success"
+                onClick={() =>
+                  this.onClick(movie.Title, movie.imdbID, movie.Year)
+                }
+              >
+                See more
+              </Button>
+            ) : (
+              <Button className="seeMoreButton" color="success" disabled>
+                No more info provided for games
+              </Button>
+            )}
           </div>
         </div>
         <Modal show={show} onHide={this.handleClose}>

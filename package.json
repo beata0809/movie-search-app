@@ -41,8 +41,8 @@
       "last 1 safari version"
     ]
   },
-"editor.formatOnSave": false,
-"[javascript]": {
+  "editor.formatOnSave": false,
+  "[javascript]": {
     "editor.formatOnSave": true
-}
+  }
 }

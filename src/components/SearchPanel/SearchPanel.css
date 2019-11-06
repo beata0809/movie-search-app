@@ -22,16 +22,23 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1200px) {
   .title {
     padding-left: 20% !important;
   }
 
   .inputLabel {
-    margin-left: 15vh;
+    margin-left: 25vh;
     margin-right: 5vh;
   }
   #buttonSearch {
     width: 30%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .inputLabel {
+    margin-left: 15vh;
+    margin-right: 5vh;
   }
 }

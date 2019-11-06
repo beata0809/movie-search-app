@@ -15,15 +15,35 @@ class MovieListPanel extends React.Component {
     this.state = { currentPage: 1, postsPerPage: 10 };
   }
 
+  componentDidUpdate(prevProps) {
+    const { movie } = this.props;
+    if (movie !== prevProps.movie) {
+      this.setState({ currentPage: 1 });
+    }
+  }
+
   paginate = pageNumber => {
     const { getSelectedMovies, movie } = this.props;
     this.setState({ currentPage: pageNumber });
     getSelectedMovies(movie, pageNumber);
   };
 
+  handlePrevious = pageNumber => {
+    const { getSelectedMovies, movie } = this.props;
+    this.setState({ currentPage: pageNumber - 1 });
+    getSelectedMovies(movie, pageNumber - 1);
+  };
+
+  handleNext = pageNumber => {
+    const { getSelectedMovies, movie } = this.props;
+    this.setState({ currentPage: pageNumber + 1 });
+    getSelectedMovies(movie, pageNumber + 1);
+  };
+
   render() {
     const { searchMovie } = this.props;
-    const { postsPerPage } = this.state;
+    const { postsPerPage, currentPage } = this.state;
+
     if (searchMovie === null) {
       return <SearchPanel />;
     }
@@ -32,6 +52,13 @@ class MovieListPanel extends React.Component {
         <SearchPanel />
         {searchMovie && searchMovie.Response === "True" ? (
           <div>
+            <div className="extraInfo">
+              {" "}
+              <ListGroupItem>
+                results: {searchMovie.totalResults}, pages:{" "}
+                {Math.ceil(searchMovie.totalResults / postsPerPage)}
+              </ListGroupItem>{" "}
+            </div>
             {searchMovie &&
               searchMovie.Search.map(movie => (
                 <ListGroupItem
@@ -44,7 +71,7 @@ class MovieListPanel extends React.Component {
               ))}
           </div>
         ) : (
-          <div className="notFound">
+          <div className="extraInfo">
             {" "}
             <ListGroupItem>movie not found</ListGroupItem>{" "}
           </div>
@@ -54,6 +81,9 @@ class MovieListPanel extends React.Component {
             postsPerPage={postsPerPage}
             totalPosts={searchMovie.totalResults}
             paginate={this.paginate}
+            currentPage={currentPage}
+            handlePrevious={this.handlePrevious}
+            handleNext={this.handleNext}
           />
         }
       </>
