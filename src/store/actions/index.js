@@ -6,6 +6,7 @@ export const getSelectedMovies = (title, page) => async dispatch => {
     const { data } = await axios.get(
       `https://www.omdbapi.com/?apikey=c268494&s=${title}&page=${page}`
     );
+    console.log(data);
     dispatch({
       type: SELECTED_MOVIES,
       payload: data
@@ -20,6 +21,7 @@ export const getSingleMovie = (title, id, year) => async dispatch => {
     const { data } = await axios.get(
       `https://www.omdbapi.com/?i=${id}&apikey=c268494&t=${title}&y=${year}`
     );
+    console.log(data);
     dispatch({
       type: SINGLE_MOVIE,
       payload: data

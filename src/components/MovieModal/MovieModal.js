@@ -6,8 +6,8 @@ import { connect } from "react-redux";
 import poster from "./../../photo/download.png";
 
 class MovieModal extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { movieExist: false };
   }
 
@@ -19,9 +19,10 @@ class MovieModal extends React.Component {
 
   render() {
     const { singleMovie } = this.props;
+    const { movieExist } = this.state;
     return (
       <>
-        {this.state.movieExist === true ? (
+        {movieExist === true ? (
           singleMovie && singleMovie.Response === "True" ? (
             <>
               <Modal.Header closeButton>

@@ -10,14 +10,15 @@ import "./MovieListPanel.css";
 import { getSelectedMovies } from "../../store/actions";
 
 class MovieListPanel extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { currentPage: 1, postsPerPage: 10 };
   }
 
   paginate = pageNumber => {
+    const { getSelectedMovies, movie } = this.props;
     this.setState({ currentPage: pageNumber });
-    this.props.getSelectedMovies(this.props.movie, pageNumber);
+    getSelectedMovies(movie, pageNumber);
   };
 
   render() {

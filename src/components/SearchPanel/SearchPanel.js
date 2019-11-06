@@ -7,7 +7,8 @@ import { Button } from "reactstrap";
 import { Navbar } from "react-bootstrap";
 class SearchPanel extends React.Component {
   onSubmit = formValues => {
-    this.props.getSelectedMovies(formValues.movie, 1);
+    const { getSelectedMovies } = this.props;
+    getSelectedMovies(formValues.movie, 1);
   };
 
   render() {
@@ -15,9 +16,7 @@ class SearchPanel extends React.Component {
     return (
       <div>
         <Navbar bg="success">
-          <Navbar.Brand href="#home" className="title">
-            Find your movie here
-          </Navbar.Brand>
+          <Navbar.Brand className="title">Find your movie here</Navbar.Brand>
         </Navbar>
         <form className="form" onSubmit={handleSubmit(this.onSubmit)}>
           {

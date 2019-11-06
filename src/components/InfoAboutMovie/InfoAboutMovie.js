@@ -8,8 +8,8 @@ import MovieModal from "../MovieModal/MovieModal";
 import poster from "./../../photo/download.png";
 
 class InfoAboutMovie extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { show: false };
   }
 
@@ -25,7 +25,8 @@ class InfoAboutMovie extends React.Component {
     });
   };
   onClick = (title, id, year) => {
-    this.props.getSingleMovie(title, id, year);
+    const { getSingleMovie } = this.props;
+    getSingleMovie(title, id, year);
     this.setState({
       show: true
     });
@@ -33,7 +34,7 @@ class InfoAboutMovie extends React.Component {
 
   render() {
     const { movie } = this.props;
-
+    const { show } = this.state;
     return (
       <>
         <div className="singleMoviePart">
@@ -62,7 +63,7 @@ class InfoAboutMovie extends React.Component {
             </Button>
           </div>
         </div>
-        <Modal show={this.state.show} onHide={this.handleClose}>
+        <Modal show={show} onHide={this.handleClose}>
           <MovieModal />
           <Modal.Footer>
             <Button variant="secondary" onClick={this.handleClose}>
